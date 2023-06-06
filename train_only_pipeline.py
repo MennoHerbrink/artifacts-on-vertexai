@@ -7,6 +7,7 @@ from google.cloud.aiplatform import pipeline_jobs
 
 project_id = "PROJECT_ID"
 pipeline_root_path = "gs://GSC_PATH_ROOT"
+data_file_location = "gs://GSC_PATH_DATA"
 region = "europe-west1"
 current_time = datetime.now().strftime("%Y%m%d%H%M%S")
 run_name = f"test-job-{current_time}"
