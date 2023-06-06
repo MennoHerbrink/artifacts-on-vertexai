@@ -11,18 +11,25 @@ source pipeline-env/bin/activate
 pip install -r requirements.txt
 ``` 
 
+If you later you encounter issues with protobuf, try uninstalling and installing it manually:
+
+``` bash
+pip uninstall protobuf
+pip install protobuf
+``` 
+
 ## Running pipelines
-There are two pipelines; one where data preprocessing is done in the pipeline (pipeline.py) and one where a preprocessed dataset is loaded from an existing Artifact (train_only_pipeline.py).
+There are two pipelines; one where data preprocessing is done in the [pipeline](pipeline.py) and one where a preprocessed dataset is loaded from an existing Artifact: [train_only_pipeline](train_only_pipeline.py).
 
 To run the pipeline, first you need to specify some variables, in pipeline file you're running.
 1. project_id  
-   GCP project name the pipeline will run on
+   Google Cloud Project name the pipeline will run on
 2. pipeline_root_path  
     Root location to store pipeline files to; must be a path to a folder on Google Cloud Storage
-3. data_file_location (Only for train_only_pipeline.py)  
+3. data_file_location (only for [train_only_pipeline](train_only_pipeline.py))  
     URI of preprocessed Dataset Artifact; must be valid file on Google Cloud Storage
 
-To run the pipeline run on of these.
+To run the pipeline run one of these.
 ``` bash
 python pipeline.py
 python train_only_pipeline.py
