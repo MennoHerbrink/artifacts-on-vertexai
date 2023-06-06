@@ -45,7 +45,7 @@ job = pipeline_jobs.PipelineJob(
     pipeline_root=pipeline_root_path,
     parameter_values={
         "run_name": run_name,
-        "data_file_location": "gs://GSC_PATH_DATA",
+        "data_file_location": data_file_location,
     },
     enable_caching=False,
     location="europe-west1",
